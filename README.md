@@ -125,7 +125,7 @@ Status : 200
 ]
 
 
-4. Service for a player to play a set takes playerId as input
+4. Service for a player to play a set takes playerId as input and returns thw whole set details
 url : http://localhost:9090/api/bowling/play
 Content-type : application/json
 Params : 3
