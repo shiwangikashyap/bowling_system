@@ -26,7 +26,7 @@ This project contains implementations of Rest Web Services of a bowling system
 9. As the game ends the lanes occupied by players of this game are released.
 10. The game determines the knocked pins in a set by random number generator.
 
-## Tools and Technologies Required:
+## TOOLS AND TECHNOLOGY:
 1. JUnit - 4
 2. Java - 1.8
 3. Spring Boot - 2.4.3
@@ -65,8 +65,9 @@ INSERT INTO `bowling_system`.`lane` (`lane`, `vacancy`) VALUES ('4', '4');
 5. rules                         -> (rule_name, rule_value)
 
 ## API
-```json
+
 1. Service to start game, takes input player names in key player_details and returns the gameId 
+```json
 url :  http://localhost:9090/api/bowling/start
 type : POST
 Params : {
@@ -76,8 +77,10 @@ Content-type : application/json
 
 Response 
 2
+```
 
 2. Service to get details of a game on the basis of gameId 
+```json
 url : http://localhost:9090/api/bowling/game/{gameId} =>  http://localhost:9090/api/bowling/game/1
 type : GET
 
@@ -86,9 +89,10 @@ Content-type : application/json
 Case 1 : when lane is not vacant (status 200) : {"gameId":1,"noOfPlayers":2,"winner":null,"winnerScore":0,"winnerId":0,"gameStatus":"WAITING"}
 Case 2 : game has started (status 200) : {"gameId":1,"noOfPlayers":2,"winner":null,"winnerScore":0,"winnerId":0,"gameStatus":"ONGOING"}
 Case 3 : game has finished (status 200): {"gameId":3,"noOfPlayers":2,"winner":"Sarita","winnerScore":96,"winnerId":3,"gameStatus":"FINISHED"}
-
+```
 
 3. Service to get players of a game
+```json
 url : http://localhost:9090/api/bowling/game/{playerId}/players => http://localhost:9090/api/bowling/game/3/players
 type : GET
 
@@ -123,9 +127,10 @@ Status : 200
         "active": true
     }
 ]
-
+```
 
 4. Service for a player to play a set takes playerId as input and returns thw whole set details
+```json
 url : http://localhost:9090/api/bowling/play
 Content-type : application/json
 Params : 3
@@ -167,8 +172,10 @@ Status : 409
     "errorMessage": "This action cannot be performed as player no. 3 is in invalid state",
     "errorCode": "CONFLICT"
 }
+```
 
 5. Service to get score of a player at any time of the game w.r.t. playerId
+```json
 url : http://localhost:9090/api/bowling/playerScore/{playerId} -> http://localhost:9090/api/bowling/playerScore/3
 type : GET
 
@@ -195,8 +202,10 @@ Status : 404
     "errorMessage": "Player no. 3 does not exist",
     "errorCode": "NOT_FOUND"
 }
+```
 
 6. Service to finish the game and declare the winner . Input is the gameId
+```json
 url : http://localhost:9090/api/bowling/finish
 type : POST
 Params : 3
@@ -221,7 +230,7 @@ status : 409
 }
 ```
 
-## Extension
+## EXTENSION
 This system can further be extended to include following services
 1. Replace FCFS allocation algorithm to accomodate other lane allocation algorithms,
 2. Get lane wise turn of the players. (next player in the same lane)
