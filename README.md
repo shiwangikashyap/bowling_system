@@ -232,7 +232,7 @@ status : 409
 
 ## EXTENSION
 This system can further be extended to include following services
-1. Replace FCFS allocation algorithm to accomodate other lane allocation algorithms,
-2. Get lane wise turn of the players. (next player in the same lane)
-3. Currently the system does nothing after putting the game in waiting status, this can be modified by activating game and players when enough lanes are available to be allocated 
+1. Replace FCFS allocation algorithm to accomodate other lane allocation algorithms.
+2. Get lane wise turn of the players. (next player in the same lane).
+3. Currently the system does nothing after putting the game in waiting status, this can be modified by activating game and players when enough lanes are available to be allocated.
 4. Currently the system compares scores to declare winner and in case of same scores the player with higher no of strikes wins, this will fail for players with same max score and same no of strikes, thus this needs to be improved.
